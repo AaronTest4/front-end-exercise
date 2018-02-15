@@ -1,0 +1,71 @@
+.checkAll {
+    display: block;
+    margin: 70px 25% 20px 25%;
+    background-color: #444444;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    box-shadow: 3px 3px #77A5B3;
+}
+
+.mainPage {
+    width: 50%;
+    min-width: 400px;
+    margin: auto;
+    margin-bottom: 50px;
+    height: 800px;
+    background-color: white;
+    border-radius: 1%;
+    box-shadow: 10px 10px #77A5B3;
+    overflow: scroll;
+}
+
+.greet {
+    padding-top: 20px;
+    text-align: center;
+    
+}
+
+.vl {
+    position: absolute;
+    border-right: 2px solid red;
+    height: 800px;
+    width: 50px;
+}
+
+.breakLine {
+    height: 2px;
+    color: black;
+    background-color: gray;
+}
+
+ @media only screen and (max-width: 400px) { 
+     .wholepage {
+         width: 100%;
+         margin-top: 20px;
+     }
+
+     .checkAll {
+         display: block;
+         margin: auto;
+         width: 90%;
+         background-color: white;
+         color: black;
+         font-weight: bold;
+     }
+
+    .mainPage {
+        margin-top: 20px;
+        width: 100%;
+        min-width: 0;
+        overflow: scroll;
+    }
+
+    .vl {
+        width: 50px;
+        top: 160px;
+        height: 710px;
+    }
+ }
+

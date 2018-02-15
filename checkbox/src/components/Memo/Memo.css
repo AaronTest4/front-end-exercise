@@ -1,0 +1,27 @@
+.memoItem {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* margin-top: 30px;    */
+}
+.memoStatus {
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    left: 10px;
+}
+
+.memoContent {
+    margin-left: 15%;
+    width: 80%;
+    text-indent: 0px;
+    display: inline-block;
+    word-break: break-all;
+}
+
+@media only screen and (max-width: 400px) {
+    .memoContent {
+        margin-left: 60px;
+    }
+}
+

@@ -11,30 +11,28 @@ export default class Memo extends React.Component{
         this.changeStatus = this.changeStatus.bind(this);
     }
 
-    changeStatus(e) {
-        this.setState({isChecked: !this.state.isChecked});
-        if(e.shiftKey){
-            this.props.handleShiftClick(this.props.item, this.props.index);
-        }
-        else{
-            this.props.handleClick(this.props.item, this.props.index);
-        }
-    }
-
     componentDidMount() {
         this.setState({isChecked: this.props.data.done});
     }
 
     componentWillReceiveProps(nextProps) {
         this.setState({isChecked: nextProps.data.done});
-        if(this.props.lastShiftClick){
+    }
+
+    changeStatus(e) {
+        this.setState({isChecked: !this.state.isChecked});
+        if (e.shiftKey) {
+            this.props.handleShiftClick(this.props.item, this.props.index);
+        }
+        else {
+            this.props.handleClick(this.props.item, this.props.index);
         }
     }
     
-    render(){
+    render() {
         let textDecoration = this.props.data.done? 'line-through': 'none';
         let color = this.props.data.done? 'grey':'black';
-        return(
+        return (
             <div style = {{textDecoration: textDecoration}} className = 'memoItem'>
                 <input type = "checkbox" checked = {this.state.isChecked} onClick = {this.changeStatus} className = 'memoStatus'/>
                 <span style = {{color: color}} className = 'memoContent'> {this.props.data.content} </span>

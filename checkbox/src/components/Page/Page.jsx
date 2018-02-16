@@ -5,13 +5,14 @@ import './Page.css';
 import Memo from '../Memo/Memo';
 
 export default class Page extends React.Component{
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             data: [],
             buttonPrompt: "Check All",
             //false means not all items are checked, true means yes
             flag: false,
+            //if last click included a 
             lastShiftClick: false,
             firstShiftClickIndex: null
         }
@@ -26,7 +27,7 @@ export default class Page extends React.Component{
         if (cache) {
             this.setState({data: cache});
         }
-        else{
+        else {
             fetch('data.json').then((response)=> {
                 return response.json();
             }).then((response)=> {
@@ -37,16 +38,16 @@ export default class Page extends React.Component{
     }
 
     componentDidUpdate() {
-        if(this.state.flag === false){
-            if (this.state.data.every(function(item){
+        if (this.state.flag === false) {
+            if (this.state.data.every(function(item) {
                 return item.done === true;
             })) {
                 this.setState({flag: true});
                 this.setState({buttonPrompt: "Uncheck All"})
             }
         }
-        else{
-            if (this.state.data.every(function(item){
+        else {
+            if (this.state.data.every(function(item) {
                 return item.done === false;
             })) {
                 this.setState({flag: false});
@@ -83,6 +84,7 @@ export default class Page extends React.Component{
                 // }
                 // else break;
             }
+            this.setState({lastShiftClick: false});
         }
         this.setState({data: newData});
     }
@@ -109,8 +111,6 @@ export default class Page extends React.Component{
         this.setState({data: newData});
         this.setState({flag: !this.state.flag});
     }
-
-
 
     render(){
         return(

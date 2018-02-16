@@ -24,7 +24,6 @@ export default class Page extends React.Component{
     componentDidMount() {
         const cache = JSON.parse(localStorage.getItem("data"));
         if (cache) {
-            console.log(cache);
             this.setState({data: cache});
         }
         else{
@@ -48,7 +47,7 @@ export default class Page extends React.Component{
         }
         else{
             if (this.state.data.every(function(item){
-                item.done === false;
+                return item.done === false;
             })) {
                 this.setState({flag: false});
                 this.setState({buttonPrompt: "Check All"})
@@ -73,16 +72,16 @@ export default class Page extends React.Component{
         }
         else{
             for (let i = index; i<= this.state.firstShiftClickIndex; i++) {
-                if (!newData[i].done) {
+                // if (!newData[i].done) {
                     newData[i].done = true;
-            }
-                else break;
+                // }
+                // else break;
             }
             for (let i = index; i >= this.state.firstShiftClickIndex; i--) {
-                if(!newData[i].done){
+                // if(!newData[i].done){
                     newData[i].done = true;
-            }
-                else break;
+                // }
+                // else break;
             }
         }
         this.setState({data: newData});
@@ -136,7 +135,6 @@ export default class Page extends React.Component{
                 })}
             </div>
             : <div></div>}
-
         </div>
         </div>
 

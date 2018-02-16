@@ -24,7 +24,6 @@
 .greet {
     padding-top: 20px;
     text-align: center;
-    
 }
 
 .vl {
@@ -59,7 +58,8 @@
         margin-top: 20px;
         width: 100%;
         min-width: 0;
-        overflow: scroll;
+        overflow: visible;
+        height: 100%
     }
 
     .vl {

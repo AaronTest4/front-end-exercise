@@ -6,8 +6,7 @@ export default class Memo extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            isChecked: false,
-            
+            isChecked: false
         }
         this.changeStatus = this.changeStatus.bind(this);
     }
@@ -18,7 +17,6 @@ export default class Memo extends React.Component{
             this.props.handleShiftClick(this.props.item, this.props.index);
         }
         else{
-            console.log('onshiftPress');
             this.props.handleClick(this.props.item, this.props.index);
         }
     }
